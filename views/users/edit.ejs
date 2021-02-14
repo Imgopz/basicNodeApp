@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user</title>
+</head>
+<body>
+    <h1>Edit user</h1>
+    <form action="/users/<%= user._id %>?_method=PUT" method='POST'>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id='name' name='user[name]' value='<%= user.name %>'>
+        </div>
+        <div>
+            <label for="gender">Gender: </label>
+            <input type="text" id='gender' name='user[gender]' value='<%= user.gender %>'>
+        </div>
+        <button>Update User</button>
+    </form>
+    <p>
+        <a href="/users/<%= user._id %>">Back to user</a>
+    </p>
+    <p>
+        <a href="/users">All Users</a>
+    </p>
+</body>
+</html>
